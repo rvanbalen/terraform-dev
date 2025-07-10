@@ -24,7 +24,7 @@ variable "rpc_node_password" {
 
 variable "vm_size" {
   type        = string
-  default     = "Standard_D8s_v4"
+  default     = "Standard_D4s_v4"
   description = "Size of Citrix ADC VPX Virtual Machine."
 }
 
