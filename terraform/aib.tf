@@ -71,6 +71,13 @@ resource "azurerm_role_assignment" "aib" {
   scope              = azurerm_resource_group.aib.id
   role_definition_id = azurerm_role_definition.aib.role_definition_resource_id
   principal_id       = azurerm_user_assigned_identity.aib.client_id
+
+  skip_service_principal_aad_check = true
+
+  depends_on = [
+    azurerm_role_definition.aib,
+    azurerm_user_assigned_identity.aib
+  ]
 }
 
 resource "time_sleep" "aib" {
@@ -202,7 +209,10 @@ resource "azurerm_resource_group_template_deployment" "aib" {
   }
 TEMPLATE
 
-  depends_on = [time_sleep.aib, azurerm_shared_image.aib]
+  depends_on = [
+    time_sleep.aib,
+    azurerm_shared_image.aib
+  ]
 }
 
 resource "null_resource" "aib" {
