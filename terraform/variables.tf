@@ -14,21 +14,21 @@ variable "prefix" {
 }
 
 variable "publisher" {
-  type = string
+  type        = string
   description = "Image publisher"
-  default = "MicrosoftWindowsDesktop"
+  default     = "MicrosoftWindowsDesktop"
 }
 
 variable "offer" {
-  type = string
+  type        = string
   description = "Image offer"
-  default = "office-365"
+  default     = "office-365"
 }
 
 variable "sku" {
-  type = string
+  type        = string
   description = "Image SKU"
-  default = "win11-24h2-avd-m365"
+  default     = "win11-24h2-avd-m365"
 }
 
 variable "image_replication_regions" {

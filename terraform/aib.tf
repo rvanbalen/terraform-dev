@@ -214,5 +214,5 @@ resource "null_resource" "aib" {
     command = "az resource invoke-action --resource-group ${azurerm_resource_group.aib.name} --resource-type Microsoft.VirtualMachineImages/imageTemplates -n ${random_string.aib.result} --action Run"
   }
 
-  depends_on = [ azurerm_resource_group_template_deployment.aib ]
+  depends_on = [azurerm_resource_group_template_deployment.aib]
 }
